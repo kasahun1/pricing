@@ -1,0 +1,203 @@
+@import url("base.css");
+@import url("responsive.css");
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background-color: var(--very-light-grayish-blue);
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url("../images/bg-bottom.svg") no-repeat bottom left,
+    url("../images/bg-top.svg") no-repeat top right;
+  z-index: -1;
+}
+
+main {
+  min-height: 100vh;
+  width: min(375px, 1440px);
+  display: inherit;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+header {
+  text-align: center;
+  color: var(--light-grayish-blue);
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-block-end: 2rem;
+  color: var(--grayish-blue);
+}
+
+.switch-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3.8rem;
+  height: 2.125rem;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.625rem;
+  width: 1.625rem;
+  left: 0.25rem;
+  bottom: 0.25rem;
+  background-color: var(--very-light-grayish-blue);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:hover + .slider:hover {
+  opacity: 0.6;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 0.1rem var(--gradient);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(1.625rem);
+  -ms-transform: translateX(1.625rem);
+  transform: translateX(1.625rem);
+}
+
+.slider.round {
+  border-radius: 2.125rem;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.cards-container {
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  height: 30rem;
+  width: 23rem;
+  padding: 1rem 2rem;
+  display: inherit;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  color: var(--grayish-blue);
+  box-shadow: -0.1rem 0.1rem 2rem var(--light-grayish-blue);
+  background-color: var(--very-light-grayish-blue);
+}
+
+.card:first-child {
+  border-radius: 0.8rem 0 0 0.8rem;
+}
+
+.card:last-child {
+  border-radius: 0 0.8rem 0.8rem 0;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+}
+
+.card a {
+  width: 100%;
+  line-height: 3;
+  text-decoration: none;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+  background: var(--gradient);
+  color: var(--very-light-grayish-blue);
+  transition: all 0.6s;
+  margin-block-start: 1rem;
+}
+
+.card p:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  font-size: 4.5rem;
+  color: var(--dark-grayish-blue);
+}
+
+.card p span {
+  font-size: 2.5rem;
+}
+
+.card p {
+  padding-block-end: 1.2rem;
+  border-block-end: 0.05rem solid var(--light-grayish-blue);
+}
+
+.card:nth-child(even) {
+  background: var(--gradient);
+  padding-block: 2.5rem;
+  border-radius: 0.8rem;
+  height: 33rem;
+  color: var(--very-light-grayish-blue);
+  box-shadow: none;
+}
+
+.card:nth-child(even) p:first-of-type {
+  color: var(--very-light-grayish-blue);
+}
+
+.card:nth-child(even) p {
+  border-block-end: 0.05rem solid var(--very-light-grayish-blue);
+}
+
+.card:nth-child(even) a {
+  color: var(--grayish-blue);
+  background: var(--very-light-grayish-blue);
+}
+
+.card a:hover {
+  background: var(--very-liht-grayish-blue);
+  color: var(--grayish-blue);
+  border: 0.1rem solid var(--grayish-blue);
+}
+
+.card:nth-child(even) a:hover {
+  color: var(--very-light-grayish-blue);
+  border: 0.1rem solid var(--very-light-grayish-blue);
+}

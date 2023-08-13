@@ -1,0 +1,17 @@
+@media (max-width: 1030px) {
+  main {
+    padding-block: 2rem;
+  }
+  .cards-container {
+    padding-block: 2rem;
+    max-width: 375px;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .card {
+    height: 100%;
+    border-radius: 0.8rem !important;
+    box-shadow: -0.1rem 0.1rem 2rem var(--light-grayish-blue) !important;
+  }
+}
